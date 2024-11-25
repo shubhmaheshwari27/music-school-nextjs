@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { HoverEffect } from "./ui/card-hover-effect";
-
+import './newfile.css'
 
 function UpcomingWebinars() {
     const featuredWebinars = [
@@ -11,6 +11,7 @@ function UpcomingWebinars() {
             'Dive deep into the fundamentals of music theory and enhance your musical skills.',
           slug: 'understanding-music-theory',
           isFeatured: true,
+          colour: '#E06910',
         },
         {
           title: 'The Art of Songwriting',
@@ -18,6 +19,7 @@ function UpcomingWebinars() {
             'Learn the craft of songwriting from experienced musicians and songwriters.',
           slug: 'the-art-of-songwriting',
           isFeatured: true,
+          colour: '#1E90FF',
         },
         {
           title: 'Mastering Your Instrument',
@@ -25,6 +27,7 @@ function UpcomingWebinars() {
             'Advanced techniques to master your musical instrument of choice.',
           slug: 'mastering-your-instrument',
           isFeatured: true,
+          colour: '#32CD32',
         },
         {
           title: 'Music Production Essentials',
@@ -32,6 +35,7 @@ function UpcomingWebinars() {
             'Get started with music production with this comprehensive overview.',
           slug: 'music-production-essentials',
           isFeatured: true,
+          colour: '#FF4500',
         },
         {
           title: 'Live Performance Techniques',
@@ -39,6 +43,7 @@ function UpcomingWebinars() {
             'Enhance your live performance skills with expert tips and strategies.',
           slug: 'live-performance-techniques',
           isFeatured: true,
+          colour: '#6A5ACD',
         },
         {
           title: 'Digital Music Marketing',
@@ -46,6 +51,7 @@ function UpcomingWebinars() {
             'Learn how to promote your music effectively in the digital age.',
           slug: 'digital-music-marketing',
           isFeatured: true,
+          colour: '#FFD700',
         },
       ];
   return (
@@ -56,11 +62,11 @@ function UpcomingWebinars() {
             <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">Enhance Your Musical Journey</p>
             </div>
             <div className='mt-10'>
-                <HoverEffect items={featuredWebinars.map((webinar, index) => ({
+                <HoverEffect items={featuredWebinars.map((webinar) => ({
                   title: webinar.title,
                   description: webinar.description,
                   link: '/',
-                  className: index === 2 ? 'bg-red-500' : 'bg-black', 
+                  colour: webinar.colour,
                 }))}/>
             </div>
             <div className='mt-10 text-center'>
@@ -75,4 +81,4 @@ function UpcomingWebinars() {
   )
 }
 
-export default UpcomingWebinars
+export default UpcomingWebinars;
